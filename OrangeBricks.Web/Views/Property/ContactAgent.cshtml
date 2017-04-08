@@ -12,6 +12,7 @@
 @using (Html.BeginForm("ContactAgent", "Property", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {
     @Html.AntiForgeryToken()
+    @Html.Hidden("PropertyId", Model.PropertyId)
     <hr/>
     @Html.ValidationSummary("", new { @class = "col-md-offset-2 alert alert-danger" })
     if (TempData["SuccessMessage"] != null)
