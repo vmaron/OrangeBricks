@@ -23,4 +23,11 @@ textarea {
     max-width: 280px;
 }
 
+/* bottom small margin */
 .m-b-sm { padding-bottom: 15px; }
+
+/* Set alert to the size of the inner text */
+.alert { display: inline-block}
+
+/*  Hide validation summary when there are no errors */
+.validation-summary-valid.alert-danger { display: none; }

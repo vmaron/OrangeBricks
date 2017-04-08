@@ -1,0 +1,57 @@
+﻿@model OrangeBricks.Web.Controllers.Property.ViewModels.ContactAgentViewModel
+
+@{
+    ViewBag.Title = "Contact Agent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact Agent</h2>
+
+<p>Contact agent to book your viewing appointment</p>
+
+@using (Html.BeginForm("ContactAgent", "Property", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+    <hr/>
+    @Html.ValidationSummary("", new { @class = "col-md-offset-2 alert alert-danger" })
+    if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.BuyerName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.BuyerName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = "I am interested in " + Model.StreetName })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary" value="Contact Agent" />
+            </div>
+        </div>
+    }
+
+}
+ 
