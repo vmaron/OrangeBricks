@@ -8,24 +8,24 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
 
         public CreatePropertyCommandHandler(IOrangeBricksContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public void Handle(CreatePropertyCommand command)
         {
             var property = new Models.Property
             {
-               PropertyType = command.PropertyType,
-               StreetName = command.StreetName,
-               Description = command.Description,
-               NumberOfBedrooms = command.NumberOfBedrooms
+                PropertyType = command.PropertyType,
+                StreetName = command.StreetName,
+                Description = command.Description,
+                NumberOfBedrooms = command.NumberOfBedrooms
             };
 
             property.SellerUserId = command.SellerUserId;
 
-            _context.Properties.Add(property);
+            this._context.Properties.Add(property);
 
-            _context.SaveChanges();
+            this._context.SaveChanges();
         }
     }
 }

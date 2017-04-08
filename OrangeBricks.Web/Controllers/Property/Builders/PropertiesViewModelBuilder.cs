@@ -1,5 +1,3 @@
-using System;
-using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
 using OrangeBricks.Web.Models;
@@ -12,18 +10,18 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
 
         public PropertiesViewModelBuilder(IOrangeBricksContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public PropertiesViewModel Build(PropertiesQuery query)
         {
-            var properties = _context.Properties
+            var properties = this._context.Properties
                 .Where(p => p.IsListedForSale);
 
             if (!string.IsNullOrWhiteSpace(query.Search))
             {
-                properties = properties.Where(x => x.StreetName.Contains(query.Search) 
-                    || x.Description.Contains(query.Search));
+                properties = properties.Where(x => x.StreetName.Contains(query.Search)
+                                                   || x.Description.Contains(query.Search));
             }
 
             return new PropertiesViewModel

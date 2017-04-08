@@ -12,6 +12,8 @@ namespace OrangeBricks.Web.Models
 
         public OfferStatus Status { get; set; }
 
+        public string BuyerUserId { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set; }

@@ -10,14 +10,14 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
 
         public MyPropertiesViewModelBuilder(IOrangeBricksContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public MyPropertiesViewModel Build(string sellerId)
         {
             return new MyPropertiesViewModel
             {
-                Properties = _context.Properties
+                Properties = this._context.Properties
                     .Where(p => p.SellerUserId == sellerId)
                     .Select(p => new PropertyViewModel
                     {
