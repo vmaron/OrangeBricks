@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Attributes;
 using OrangeBricks.Web.Controllers.Offers.Builders;
 using OrangeBricks.Web.Controllers.Offers.CommandHandlers;
 using OrangeBricks.Web.Controllers.Offers.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Offers
 {

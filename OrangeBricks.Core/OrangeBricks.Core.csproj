@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9AB13FF9-C6FF-4050-B8CA-F48F88C31119}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OrangeBricks.Core</RootNamespace>
+    <AssemblyName>OrangeBricks.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Users\IdentityModels.cs" />
+    <Compile Include="Entities\Offers\Offer.cs" />
+    <Compile Include="Entities\Offers\OfferStatus.cs" />
+    <Compile Include="Entities\Property\Property.cs" />
+    <Compile Include="Entities\Property\PropertyViewing.cs" />
+    <Compile Include="Entities\Property\PropertyViewingStatus.cs" />
+    <Compile Include="Infrastructure\Data\ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\Data\IdentityManager.cs" />
+    <Compile Include="Infrastructure\Data\IOrangeBricksContext.cs" />
+    <Compile Include="Migrations\201505052030221_InitialCreate.cs" />
+    <Compile Include="Migrations\201505052030221_InitialCreate.Designer.cs">
+      <DependentUpon>201505052030221_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505062111239_AddPropertiesTable.cs" />
+    <Compile Include="Migrations\201505062111239_AddPropertiesTable.Designer.cs">
+      <DependentUpon>201505062111239_AddPropertiesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505100925257_AddPropertiesFields.cs" />
+    <Compile Include="Migrations\201505100925257_AddPropertiesFields.Designer.cs">
+      <DependentUpon>201505100925257_AddPropertiesFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505100940267_ChangeSellerRelationship.cs" />
+    <Compile Include="Migrations\201505100940267_ChangeSellerRelationship.Designer.cs">
+      <DependentUpon>201505100940267_ChangeSellerRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505101051033_AddPropertyForSaleOption.cs" />
+    <Compile Include="Migrations\201505101051033_AddPropertyForSaleOption.Designer.cs">
+      <DependentUpon>201505101051033_AddPropertyForSaleOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505101523118_AddOffersRelationship.cs" />
+    <Compile Include="Migrations\201505101523118_AddOffersRelationship.Designer.cs">
+      <DependentUpon>201505101523118_AddOffersRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505101607236_AddFieldsToOffers.cs" />
+    <Compile Include="Migrations\201505101607236_AddFieldsToOffers.Designer.cs">
+      <DependentUpon>201505101607236_AddFieldsToOffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704072052342_AddBuyerIdToOffersTable.cs" />
+    <Compile Include="Migrations\201704072052342_AddBuyerIdToOffersTable.Designer.cs">
+      <DependentUpon>201704072052342_AddBuyerIdToOffersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704081839387_AddPropertyViewingTable.cs" />
+    <Compile Include="Migrations\201704081839387_AddPropertyViewingTable.Designer.cs">
+      <DependentUpon>201704081839387_AddPropertyViewingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505052030221_InitialCreate.resx">
+      <DependentUpon>201505052030221_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505062111239_AddPropertiesTable.resx">
+      <DependentUpon>201505062111239_AddPropertiesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505100925257_AddPropertiesFields.resx">
+      <DependentUpon>201505100925257_AddPropertiesFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505100940267_ChangeSellerRelationship.resx">
+      <DependentUpon>201505100940267_ChangeSellerRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505101051033_AddPropertyForSaleOption.resx">
+      <DependentUpon>201505101051033_AddPropertyForSaleOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505101523118_AddOffersRelationship.resx">
+      <DependentUpon>201505101523118_AddOffersRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505101607236_AddFieldsToOffers.resx">
+      <DependentUpon>201505101607236_AddFieldsToOffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704072052342_AddBuyerIdToOffersTable.resx">
+      <DependentUpon>201704072052342_AddBuyerIdToOffersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704081839387_AddPropertyViewingTable.resx">
+      <DependentUpon>201704081839387_AddPropertyViewingTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,6 +1,8 @@
+using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 
-namespace OrangeBricks.Web.Controllers.Property.Commands
+namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 {
     public class CreatePropertyCommandHandler
     {
@@ -13,7 +15,7 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
 
         public void Handle(CreatePropertyCommand command)
         {
-            var property = new Models.Property
+            var property = new Core.Entities.Property.Property
             {
                 PropertyType = command.PropertyType,
                 StreetName = command.StreetName,

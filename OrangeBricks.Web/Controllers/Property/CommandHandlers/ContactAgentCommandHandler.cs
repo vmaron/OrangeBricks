@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using OrangeBricks.Core.Entities;
+using OrangeBricks.Core.Entities.Property;
+using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 

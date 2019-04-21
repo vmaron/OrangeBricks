@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using NSubstitute;
 using NUnit.Framework;
+using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 
@@ -11,13 +13,13 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
     {
         private ListPropertyCommandHandler _handler;
         private IOrangeBricksContext _context;
-        private IDbSet<Models.Property> _properties;
+        private IDbSet<Core.Entities.Property.Property> _properties;
 
         [SetUp]
         public void SetUp()
         {
             _context = Substitute.For<IOrangeBricksContext>();
-            _properties = Substitute.For<IDbSet<Models.Property>>();
+            _properties = Substitute.For<IDbSet<Core.Entities.Property.Property>>();
             _context.Properties.Returns(_properties);
             _handler = new ListPropertyCommandHandler(_context);
         }
@@ -31,7 +33,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
                 PropertyId = 1
             };
 
-            var property = new Models.Property
+            var property = new Core.Entities.Property.Property
             {
                 Description = "Test Property",
                 IsListedForSale = false

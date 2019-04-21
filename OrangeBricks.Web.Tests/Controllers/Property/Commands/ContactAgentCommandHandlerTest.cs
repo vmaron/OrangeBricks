@@ -2,9 +2,11 @@
 using System.Linq;
 using NSubstitute;
 using NUnit.Framework;
+using OrangeBricks.Core.Entities;
+using OrangeBricks.Core.Entities.Property;
+using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
 {
@@ -18,7 +20,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
         {
             this._context = Substitute.For<IOrangeBricksContext>();
             this._context.PropertyViewings.Returns(Substitute.For<IDbSet<PropertyViewing>>());
-            this._properties = Substitute.For<IDbSet<Models.Property>>();
+            this._properties = Substitute.For<IDbSet<Core.Entities.Property.Property>>();
             this._context.Properties.Returns(this._properties);
             this._handler = new ContactAgentCommandHandler(this._context);
         }
@@ -27,7 +29,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
 
         private ContactAgentCommandHandler _handler;
         private IOrangeBricksContext _context;
-        private IDbSet<Models.Property> _properties;
+        private IDbSet<Core.Entities.Property.Property> _properties;
 
         [Test]
         public void HandleShouldAddPropertyViewing()
@@ -35,7 +37,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
             // Arrange
             var command = new ContactAgentCommand {PropertyId = 1};
 
-            var property = new Models.Property
+            var property = new Core.Entities.Property.Property
             {
                 Id = 1,
                 Description = "Test Property"
@@ -59,7 +61,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
             const string buyerUserId = "12345";
             var command = new ContactAgentCommand {PropertyId = 1, BuyerUserId = buyerUserId};
 
-            var property = new Models.Property
+            var property = new Core.Entities.Property.Property
             {
                 Id = 1,
                 Description = "Test Property"

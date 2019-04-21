@@ -1,4 +1,5 @@
 using System.Linq;
+using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
 using OrangeBricks.Web.Models;
@@ -35,7 +36,7 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
             };
         }
 
-        private static PropertyViewModel MapViewModel(Models.Property property)
+        private static PropertyViewModel MapViewModel(Core.Entities.Property.Property property)
         {
             return new PropertyViewModel
             {

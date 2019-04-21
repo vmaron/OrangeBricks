@@ -1,5 +1,5 @@
-﻿using OrangeBricks.Web.Controllers.Property.ViewModels;
-using OrangeBricks.Web.Models;
+﻿using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Web.Controllers.Property.ViewModels;
 
 namespace OrangeBricks.Web.Controllers.Property.Builders
 {
@@ -9,12 +9,12 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
 
         public ContactAgentViewModelBuilder(IOrangeBricksContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public ContactAgentViewModel Build(int id)
         {
-            var property = this._context.Properties.Find(id);
+            var property = _context.Properties.Find(id);
 
             return new ContactAgentViewModel
             {

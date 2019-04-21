@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using OrangeBricks.Core.Entities;
+using OrangeBricks.Core.Entities.Offers;
+using OrangeBricks.Core.Entities.Property;
 using OrangeBricks.Web.Controllers.Offers.ViewModels;
 
 namespace OrangeBricks.Web.Models.Extensions

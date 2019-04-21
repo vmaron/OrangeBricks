@@ -4,6 +4,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using OrangeBricks.Core.Entities;
+using OrangeBricks.Core.Entities.Users;
+using OrangeBricks.Core.Infrastructure.Data;
 using Owin;
 using OrangeBricks.Web.Models;
 

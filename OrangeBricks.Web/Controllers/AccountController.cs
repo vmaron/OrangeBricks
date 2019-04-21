@@ -5,7 +5,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using OrangeBricks.Web.Infrastructure;
+using OrangeBricks.Core.Entities;
+using OrangeBricks.Core.Entities.Users;
+using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers
