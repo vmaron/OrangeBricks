@@ -1,3 +1,4 @@
+using System;
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using OrangeBricks.Core.Entities.Offers;
@@ -8,15 +9,16 @@ namespace OrangeBricks.Core.Infrastructure.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IOrangeBricksContext
     {
+        private static readonly Lazy<ApplicationDbContext> _instance =
+            new Lazy<ApplicationDbContext>(() => new ApplicationDbContext());
+
+
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", false)
         {
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        public static ApplicationDbContext Instance => _instance.Value;
 
         public IDbSet<Property> Properties { get; set; }
         public IDbSet<Offer> Offers { get; set; }
@@ -25,6 +27,11 @@ namespace OrangeBricks.Core.Infrastructure.Data
         public new void SaveChanges()
         {
             base.SaveChanges();
+        }
+
+        public static ApplicationDbContext Create()
+        {
+            return Instance;
         }
     }
 }
