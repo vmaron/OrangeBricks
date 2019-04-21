@@ -2,7 +2,6 @@
 using System.Linq;
 using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Offers.ViewModels;
-using OrangeBricks.Web.Models;
 using OrangeBricks.Web.Models.Extensions;
 
 namespace OrangeBricks.Web.Controllers.Offers.Builders
@@ -23,7 +22,7 @@ namespace OrangeBricks.Web.Controllers.Offers.Builders
                 .Include(x => x.Offers)
                 .SingleOrDefault();
 
-            return property.MapIt();
+            return property.PropertyToOffersOnPropertyViewModel();
         }
     }
 }

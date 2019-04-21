@@ -2,7 +2,7 @@ using System.Linq;
 using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
-using OrangeBricks.Web.Models;
+using OrangeBricks.Web.Models.Extensions;
 
 namespace OrangeBricks.Web.Controllers.Property.Builders
 {
@@ -12,39 +12,27 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
 
         public PropertiesViewModelBuilder(IOrangeBricksContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
-        public PropertiesViewModel Build(FindPropertyCommand query)
+        public PropertiesViewModel Build(FindPropertyCommand command)
         {
-            var properties = this._context.Properties
+            var properties = _context.Properties
                 .Where(p => p.IsListedForSale);
 
-            if (!string.IsNullOrWhiteSpace(query.Search))
+            if (!string.IsNullOrWhiteSpace(command.Search))
             {
-                properties = properties.Where(x => x.StreetName.Contains(query.Search)
-                                                   || x.Description.Contains(query.Search));
+                properties = properties.Where(x => x.StreetName.Contains(command.Search)
+                                                   || x.Description.Contains(command.Search));
             }
 
             return new PropertiesViewModel
             {
                 Properties = properties
                     .ToList()
-                    .Select(MapViewModel)
+                    .Select(x => x.PropertyToPropertyViewModel())
                     .ToList(),
-                Search = query.Search
-            };
-        }
-
-        private static PropertyViewModel MapViewModel(Core.Entities.Property.Property property)
-        {
-            return new PropertyViewModel
-            {
-                Id = property.Id,
-                StreetName = property.StreetName,
-                Description = property.Description,
-                NumberOfBedrooms = property.NumberOfBedrooms,
-                PropertyType = property.PropertyType
+                Search = command.Search
             };
         }
     }

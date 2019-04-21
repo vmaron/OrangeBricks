@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Offers;
 using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Core.Infrastructure.Interfaces;
 using OrangeBricks.Web.Controllers.Property.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 {
-    public class MakeOfferCommandHandler
+    public class MakeOfferCommandHandler : IHandle<MakeOfferCommand>
     {
         private readonly IOrangeBricksContext _context;
 

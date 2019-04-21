@@ -1,6 +1,5 @@
 using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Offers;
 using OrangeBricks.Core.Entities.Property;
 using OrangeBricks.Core.Entities.Users;

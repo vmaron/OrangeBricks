@@ -1,12 +1,12 @@
 using System;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Offers;
 using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Core.Infrastructure.Interfaces;
 using OrangeBricks.Web.Controllers.Offers.Commands;
 
 namespace OrangeBricks.Web.Controllers.Offers.CommandHandlers
 {
-    public class AcceptOfferCommandHandler
+    public class AcceptOfferCommandHandler : IHandle<AcceptOfferCommand>
     {
         private readonly IOrangeBricksContext _context;
 

@@ -1,5 +1,4 @@
 using System.Data.Entity;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Offers;
 using OrangeBricks.Core.Entities.Property;
 

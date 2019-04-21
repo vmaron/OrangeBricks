@@ -1,13 +1,10 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+using OrangeBricks.Core.Infrastructure.SharedKernel;
 
 namespace OrangeBricks.Core.Entities.Offers
 {
-    public class Offer
+    public class Offer : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
         public int Amount { get; set; }
 
         public OfferStatus Status { get; set; }

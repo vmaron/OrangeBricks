@@ -69,6 +69,11 @@
     <Compile Include="Infrastructure\Data\ApplicationDbContext.cs" />
     <Compile Include="Infrastructure\Data\IdentityManager.cs" />
     <Compile Include="Infrastructure\Data\IOrangeBricksContext.cs" />
+    <Compile Include="Infrastructure\Interfaces\IDomainEventDispatcher.cs" />
+    <Compile Include="Infrastructure\Interfaces\IHandle.cs" />
+    <Compile Include="Infrastructure\Interfaces\IRepository.cs" />
+    <Compile Include="Infrastructure\SharedKernel\BaseDomainEvent.cs" />
+    <Compile Include="Infrastructure\SharedKernel\BaseEntity.cs" />
     <Compile Include="Migrations\201505052030221_InitialCreate.cs" />
     <Compile Include="Migrations\201505052030221_InitialCreate.Designer.cs">
       <DependentUpon>201505052030221_InitialCreate.cs</DependentUpon>

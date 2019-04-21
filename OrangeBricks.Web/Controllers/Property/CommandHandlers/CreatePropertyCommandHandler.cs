@@ -1,10 +1,10 @@
 using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Core.Infrastructure.Interfaces;
 using OrangeBricks.Web.Controllers.Property.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 {
-    public class CreatePropertyCommandHandler
+    public class CreatePropertyCommandHandler : IHandle<CreatePropertyCommand>
     {
         private readonly IOrangeBricksContext _context;
 

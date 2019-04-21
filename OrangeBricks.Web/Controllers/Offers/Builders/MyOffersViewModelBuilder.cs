@@ -3,7 +3,6 @@ using System.Data.Entity;
 using System.Linq;
 using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Offers.ViewModels;
-using OrangeBricks.Web.Models;
 using OrangeBricks.Web.Models.Extensions;
 
 namespace OrangeBricks.Web.Controllers.Offers.Builders
@@ -22,7 +21,7 @@ namespace OrangeBricks.Web.Controllers.Offers.Builders
             var offers = this._context.Properties.Where(x => x.Offers.Any(o => o.BuyerUserId == buyerId))
                 .Include(x => x.Offers)
                 .ToList()
-                .ConvertAll(x => x.MapIt());
+                .ConvertAll(x => x.PropertyToOffersOnPropertyViewModel());
 
             return offers;
         }

@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Property;
 using OrangeBricks.Core.Infrastructure.Data;
+using OrangeBricks.Core.Infrastructure.Interfaces;
 using OrangeBricks.Web.Controllers.Property.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 {
-    public class ContactAgentCommandHandler
+    public class ContactAgentCommandHandler : IHandle<ContactAgentCommand>
     {
         private readonly IOrangeBricksContext _context;
 
         public ContactAgentCommandHandler(IOrangeBricksContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public void Handle(ContactAgentCommand command)
         {
-            var property = this._context.Properties.Find(command.PropertyId);
+            var property = _context.Properties.Find(command.PropertyId);
 
             var propertyViewing = new PropertyViewing
             {
@@ -41,7 +40,7 @@ namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 
             property.PropertyViewings.Add(propertyViewing);
 
-            this._context.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }

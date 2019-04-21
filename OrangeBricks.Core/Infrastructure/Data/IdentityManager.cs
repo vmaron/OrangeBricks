@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Users;
 
 namespace OrangeBricks.Core.Infrastructure.Data
