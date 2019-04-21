@@ -4,6 +4,7 @@ using System.Linq;
 using NSubstitute;
 using NUnit.Framework;
 using OrangeBricks.Web.Controllers.Property.Builders;
+using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Tests.Controllers.Property.Builders
@@ -47,13 +48,13 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Builders
 
             _context.Properties.Returns(mockSet);
 
-            var query = new PropertiesQuery
+            var command = new FindPropertyCommand
             {
                 Search = "Smith Street"
             };
 
             // Act
-            var viewModel = builder.Build(query);
+            var viewModel = builder.Build(command);
 
             // Assert
             Assert.That(viewModel.Properties.Count, Is.EqualTo(1));
@@ -75,13 +76,13 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Builders
 
             _context.Properties.Returns(mockSet);
 
-            var query = new PropertiesQuery
+            var command = new FindPropertyCommand
             {
                 Search = "Town"
             };
 
             // Act
-            var viewModel = builder.Build(query);
+            var viewModel = builder.Build(command);
 
             // Assert
             Assert.That(viewModel.Properties.Count, Is.EqualTo(1));

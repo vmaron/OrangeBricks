@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,12 +42,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SimpleInjector">
@@ -176,24 +175,25 @@
     <Compile Include="Controllers\Offers\Builders\MyOffersViewModelBuilder.cs" />
     <Compile Include="Controllers\Offers\Builders\OffersOnPropertyViewModelBuilder.cs" />
     <Compile Include="Controllers\Offers\Commands\AcceptOfferCommand.cs" />
-    <Compile Include="Controllers\Offers\Commands\AcceptOfferCommandHandler.cs" />
+    <Compile Include="Controllers\Offers\CommandHandlers\AcceptOfferCommandHandler.cs" />
     <Compile Include="Controllers\Offers\Commands\RejectOfferCommand.cs" />
-    <Compile Include="Controllers\Offers\Commands\RejectOfferCommandHandler.cs" />
+    <Compile Include="Controllers\Offers\CommandHandlers\RejectOfferCommandHandler.cs" />
     <Compile Include="Controllers\Offers\OffersController.cs" />
     <Compile Include="Controllers\Offers\ViewModels\OffersOnPropertyViewModel.cs" />
+    <Compile Include="Controllers\Offers\ViewModels\OfferViewModel.cs" />
     <Compile Include="Controllers\Property\Builders\ContactAgentViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Builders\MakeOfferViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Builders\MyPropertiesViewModelBuilder.cs" />
-    <Compile Include="Controllers\Property\Builders\PropertiesQuery.cs" />
+    <Compile Include="Controllers\Property\Commands\FindPropertyCommand.cs" />
     <Compile Include="Controllers\Property\Builders\PropertiesViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Commands\ContactAgentCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\ContactAgentCommandHandler.cs" />
+    <Compile Include="Controllers\Property\CommandHandlers\ContactAgentCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\CreatePropertyCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\CreatePropertyCommandHandler.cs" />
+    <Compile Include="Controllers\Property\CommandHandlers\CreatePropertyCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\ListPropertyCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\ListPropertyCommandHandler.cs" />
+    <Compile Include="Controllers\Property\CommandHandlers\ListPropertyCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\MakeOfferCommand.cs" />
-    <Compile Include="Controllers\Property\Commands\MakeOfferCommandHandler.cs" />
+    <Compile Include="Controllers\Property\CommandHandlers\MakeOfferCommandHandler.cs" />
     <Compile Include="Controllers\Property\PropertyController.cs" />
     <Compile Include="Controllers\Property\ViewModels\ContactAgentViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\CreatePropertyViewModel.cs" />

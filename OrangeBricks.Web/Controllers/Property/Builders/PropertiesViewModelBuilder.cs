@@ -1,4 +1,5 @@
 using System.Linq;
+using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
 using OrangeBricks.Web.Models;
 
@@ -13,7 +14,7 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
             this._context = context;
         }
 
-        public PropertiesViewModel Build(PropertiesQuery query)
+        public PropertiesViewModel Build(FindPropertyCommand query)
         {
             var properties = this._context.Properties
                 .Where(p => p.IsListedForSale);

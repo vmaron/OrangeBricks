@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 
-namespace OrangeBricks.Web.Controllers.Property.Commands
+namespace OrangeBricks.Web.Controllers.Property.CommandHandlers
 {
     public class ContactAgentCommandHandler
     {

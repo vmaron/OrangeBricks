@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace OrangeBricks.Web.Controllers.Offers.ViewModels
@@ -16,20 +15,5 @@ namespace OrangeBricks.Web.Controllers.Offers.ViewModels
         public IEnumerable<OfferViewModel> Offers { get; set; }
 
         public int PropertyId { get; set; }
-    }
-
-    public class OfferViewModel
-    {
-        public int Id;
-
-        public int Amount { get; set; }
-
-        public DateTime CreatedAt { get; set; }
-
-        public bool IsPending { get; set; }
-
-        public bool IsAccepted { get; set; }
-
-        public string Status { get; set; }
     }
 }

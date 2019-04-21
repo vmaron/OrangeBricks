@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using OrangeBricks.Web.Attributes;
 using OrangeBricks.Web.Controllers.Property.Builders;
+using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
 using OrangeBricks.Web.Models;
@@ -19,10 +20,10 @@ namespace OrangeBricks.Web.Controllers.Property
         }
 
         [Authorize]
-        public ActionResult Index(PropertiesQuery query)
+        public ActionResult Index(FindPropertyCommand command)
         {
             var builder = new PropertiesViewModelBuilder(this._context);
-            var viewModel = builder.Build(query);
+            var viewModel = builder.Build(command);
 
             return this.View(viewModel);
         }

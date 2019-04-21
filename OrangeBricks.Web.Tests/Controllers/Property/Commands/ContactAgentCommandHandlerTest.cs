@@ -2,6 +2,7 @@
 using System.Linq;
 using NSubstitute;
 using NUnit.Framework;
+using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Models;
 
