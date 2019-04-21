@@ -4,7 +4,6 @@ using NUnit.Framework;
 using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Tests.Controllers.Property.Commands
 {

@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using OrangeBricks.Core.Infrastructure.Data;
 using OrangeBricks.Web.Controllers.Offers.ViewModels;
-using OrangeBricks.Web.Models.Extensions;
+using OrangeBricks.Web.Controllers.Property.Extensions;
 
 namespace OrangeBricks.Web.Controllers.Offers.Builders
 {

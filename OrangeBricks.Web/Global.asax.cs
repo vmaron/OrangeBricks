@@ -13,7 +13,6 @@ using Microsoft.Owin.Security;
 using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Users;
 using OrangeBricks.Core.Infrastructure.Data;
-using OrangeBricks.Web.Models;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using SimpleInjector.Integration.Web.Mvc;

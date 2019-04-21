@@ -54,7 +54,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Builders
             };
 
             // Act
-            var viewModel = builder.Build(command);
+            var viewModel = builder.Build(command.Search);
 
             // Assert
             Assert.That(viewModel.Properties.Count, Is.EqualTo(1));
@@ -82,7 +82,7 @@ namespace OrangeBricks.Web.Tests.Controllers.Property.Builders
             };
 
             // Act
-            var viewModel = builder.Build(command);
+            var viewModel = builder.Build(command.Search);
 
             // Assert
             Assert.That(viewModel.Properties.Count, Is.EqualTo(1));

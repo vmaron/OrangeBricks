@@ -1,8 +1,7 @@
 using System.Linq;
 using OrangeBricks.Core.Infrastructure.Data;
-using OrangeBricks.Web.Controllers.Property.Commands;
+using OrangeBricks.Web.Controllers.Property.Extensions;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
-using OrangeBricks.Web.Models.Extensions;
 
 namespace OrangeBricks.Web.Controllers.Property.Builders
 {
@@ -15,15 +14,15 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
             _context = context;
         }
 
-        public PropertiesViewModel Build(FindPropertyCommand command)
+        public PropertiesViewModel Build(string query)
         {
             var properties = _context.Properties
                 .Where(p => p.IsListedForSale);
 
-            if (!string.IsNullOrWhiteSpace(command.Search))
+            if (!string.IsNullOrWhiteSpace(query))
             {
-                properties = properties.Where(x => x.StreetName.Contains(command.Search)
-                                                   || x.Description.Contains(command.Search));
+                properties = properties.Where(x => x.StreetName.Contains(query)
+                                                   || x.Description.Contains(query));
             }
 
             return new PropertiesViewModel
@@ -32,7 +31,7 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
                     .ToList()
                     .Select(x => x.PropertyToPropertyViewModel())
                     .ToList(),
-                Search = command.Search
+                Search = query
             };
         }
     }

@@ -8,7 +8,6 @@ using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Users;
 using OrangeBricks.Core.Infrastructure.Data;
 using Owin;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web
 {

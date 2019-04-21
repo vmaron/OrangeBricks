@@ -5,12 +5,11 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using OrangeBricks.Core.Entities;
 using OrangeBricks.Core.Entities.Users;
 using OrangeBricks.Core.Infrastructure.Data;
-using OrangeBricks.Web.Models;
+using OrangeBricks.Web.Controllers.Account.ViewModels;
 
-namespace OrangeBricks.Web.Controllers
+namespace OrangeBricks.Web.Controllers.Account
 {
     [Authorize]
     public class AccountController : Controller

@@ -170,8 +170,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attributes\OrangeBricksAuthorizeAttribute.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Account\ViewModels\ForgotPasswordViewModel.cs" />
+    <Compile Include="Controllers\Account\ViewModels\LoginViewModel.cs" />
+    <Compile Include="Controllers\Account\ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Controllers\Account\ViewModels\ResetPasswordViewModel.cs" />
+    <Compile Include="Controllers\Account\ViewModels\SetPasswordViewModel.cs" />
+    <Compile Include="Controllers\Home\HomeController.cs" />
     <Compile Include="Controllers\Offers\Builders\MyOffersViewModelBuilder.cs" />
     <Compile Include="Controllers\Offers\Builders\OffersOnPropertyViewModelBuilder.cs" />
     <Compile Include="Controllers\Offers\Commands\AcceptOfferCommand.cs" />
@@ -204,9 +209,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Extensions\PropertyExtensions.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Controllers\Property\Extensions\PropertyExtensions.cs" />
+    <Compile Include="Controllers\Account\ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using OrangeBricks.Core.Entities.Offers;
-using OrangeBricks.Core.Entities.Property;
 using OrangeBricks.Web.Controllers.Offers.ViewModels;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
 
-namespace OrangeBricks.Web.Models.Extensions
+namespace OrangeBricks.Web.Controllers.Property.Extensions
 {
     public static class PropertyExtensions
     {
-        public static OffersOnPropertyViewModel PropertyToOffersOnPropertyViewModel(this Property property)
+        public static OffersOnPropertyViewModel PropertyToOffersOnPropertyViewModel(this Core.Entities.Property.Property property)
         {
             var offers = property.Offers ?? new List<Offer>();
 
@@ -32,7 +31,7 @@ namespace OrangeBricks.Web.Models.Extensions
             };
         }
 
-        public static PropertyViewModel PropertyToPropertyViewModel(this Property property)
+        public static PropertyViewModel PropertyToPropertyViewModel(this Core.Entities.Property.Property property)
         {
             return new PropertyViewModel
             {

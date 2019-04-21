@@ -7,7 +7,6 @@ using OrangeBricks.Web.Controllers.Property.Builders;
 using OrangeBricks.Web.Controllers.Property.CommandHandlers;
 using OrangeBricks.Web.Controllers.Property.Commands;
 using OrangeBricks.Web.Controllers.Property.ViewModels;
-using OrangeBricks.Web.Models;
 
 namespace OrangeBricks.Web.Controllers.Property
 {
@@ -24,7 +23,7 @@ namespace OrangeBricks.Web.Controllers.Property
         public ActionResult Index(FindPropertyCommand command)
         {
             var builder = new PropertiesViewModelBuilder(this._context);
-            var viewModel = builder.Build(command);
+            var viewModel = builder.Build(command.Search);
 
             return this.View(viewModel);
         }
